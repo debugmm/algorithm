@@ -7,16 +7,14 @@ int findMaxSubContinousString(char array){
 	int stringLength=strlen(array);
 	for(i=1;i<stringLength;i++){
 		if(array[i]==array[i-1]+1){
-			
 			length++;
 		}
 		else{
-			
-			if(length>max){
+			if(length>maxLength){
 				maxLength=length;
+				length=1;
+				position=i-maxLength;
 			}
-			length=1;
-			position=i-maxLength;
 		}
 	}
 	
